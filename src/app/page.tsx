@@ -11,8 +11,16 @@ export default function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4">
+     <section className="relative text-white py-20 lg:py-28">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80" 
+            alt="Truck accident attorney New York" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-900/85"></div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block bg-amber-600 text-sm font-semibold px-4 py-1 rounded-full mb-6">
