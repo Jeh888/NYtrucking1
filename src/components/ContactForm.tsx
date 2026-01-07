@@ -21,14 +21,26 @@ export default function ContactForm({ service, location }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+ const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    try {
+      await fetch('https://script.google.com/macros/s/AKfycbzIIPUWzJySsF9lAOnWMvaspFH8Tp-xkYG1bzv585ZSCNM9izv6Tfo_60Jg268TbSH7iw/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          page: typeof window !== 'undefined' ? window.location.href : ''
+        }),
+      });
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setIsSubmitted(true);
+    }
     
-    setIsSubmitted(true);
     setIsSubmitting(false);
   };
 
