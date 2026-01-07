@@ -26,7 +26,7 @@ export default function ContactForm({ service, location }: ContactFormProps) {
     setIsSubmitting(true);
     
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbzIIPUWzJySsF9lAOnWMvaspFH8Tp-xkYG1bzv585ZSCNM9izv6Tfo_60Jg268TbSH7iw/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwsJTF_OaRF6dRrGZtAKRo478F8uEkIJW-Omu4hRc7CoB8YSv0vUQ0ZMRVDNED6UNnC3Q/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
